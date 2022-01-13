@@ -78,14 +78,16 @@
       "projectType": "application",
       "targets": {
         "build": {
+          "executor": "@nrwl/workspace:run-commands",
           "outputs": [
             "dist/packages"
           ],
           "options": {
-            "commands": [],
+            "commands": [
+              "nx run app-center:build.all"
+            ],
             "parallel": false
-          },
-          "executor": "@nrwl/workspace:run-commands"
+          }
         },
         "focus": {
           "outputs": [
@@ -101,6 +103,51 @@
         }
       },
       "sourceRoot": ""
+    },
+    "app-center": {
+      "root": "packages/app-center",
+      "projectType": "library",
+      "sourceRoot": "packages/app-center",
+      "targets": {
+        "build": {
+          "executor": "@nrwl/node:package",
+          "options": {
+            "outputPath": "dist/packages/app-center",
+            "tsConfig": "packages/app-center/tsconfig.json",
+            "packageJson": "packages/app-center/package.json",
+            "main": "packages/app-center/index.d.ts",
+            "assets": [
+              "packages/app-center/*.md",
+              "packages/app-center/index.d.ts",
+              "LICENSE",
+              {
+                "glob": "**/*",
+                "input": "packages/app-center/platforms/",
+                "output": "./platforms/"
+              }
+            ]
+          }
+        },
+        "build.all": {
+          "executor": "@nrwl/workspace:run-commands",
+          "options": {
+            "commands": [
+              "nx run app-center:build",
+              "node tools/scripts/build-finish.ts app-center"
+            ],
+            "parallel": false
+          }
+        },
+        "focus": {
+          "executor": "@nrwl/workspace:run-commands",
+          "options": {
+            "commands": [
+              "nx g @nativescript/plugin-tools:focus-packages app-center"
+            ],
+            "parallel": false
+          }
+        }
+      }
     }
   },
   "cli": {

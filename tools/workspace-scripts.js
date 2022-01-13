@@ -57,12 +57,19 @@ module.exports = {
 			},
 		},
 		'⚙️': {
-			script: `npx cowsay "@nativescript/* packages will keep your ⚙️ cranking"`,
-			description: '_____________  @nativescript/*  _____________',
+			script: `npx cowsay "@skhye05/* packages will keep your ⚙️ cranking"`,
+			description: '_____________  @skhye05/*  _____________',
 		},
 		// packages
 		// build output is always in dist/packages
-		'@nativescript': {
+		'@skhye05': {
+			// @skhye05/app-center
+			'app-center': {
+				build: {
+					script: 'nx run app-center:build.all',
+					description: '@skhye05/app-center: Build',
+				},
+			},
 			'build-all': {
 				script: 'nx run all:build',
 				description: 'Build all packages',
@@ -73,6 +80,10 @@ module.exports = {
 			description: '_____________  Focus (VS Code supported)  _____________',
 		},
 		focus: {
+			'app-center': {
+				script: 'nx run app-center:focus',
+				description: 'Focus on @skhye05/app-center',
+			},
 			reset: {
 				script: 'nx run all:focus',
 				description: 'Reset Focus',
