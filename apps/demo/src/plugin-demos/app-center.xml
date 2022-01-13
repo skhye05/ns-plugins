@@ -1,14 +1,16 @@
 <Page xmlns="http://schemas.nativescript.org/tns.xsd" navigatingTo="navigatingTo" class="page">
-    <Page.actionBar>
-        <ActionBar title="app-center" icon="" class="action-bar">
-        </ActionBar>
-    </Page.actionBar>
-    <StackLayout class="p-20">
-        <ScrollView class="h-full">
-          <StackLayout>
-            <Button text="Test app-center" tap="{{ testIt }}" class="btn btn-primary"/>
-
-          </StackLayout>
-        </ScrollView>
-    </StackLayout>
+  <Page.actionBar>
+    <ActionBar title="app-center" icon="" class="action-bar">
+    </ActionBar>
+  </Page.actionBar>
+  <StackLayout class="p-20">
+    <ScrollView class="h-full">
+      <StackLayout>
+        <Button class="btn btn-primary" tap="{{ testIt }}" text="Test app-center"/>
+        <Button class="btn btn-primary" tap="{{ testTrackEvent }}" text="Test Track Event"/>
+        <Button class="btn btn-primary" tap="{{ testCrash }}" text="Test Crash"/>
+        <Button class="btn btn-primary" tap="{{ testTrackError }}" text="Test Track Error"/>
+      </StackLayout>
+    </ScrollView>
+  </StackLayout>
 </Page>

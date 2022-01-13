@@ -1,8 +1,11 @@
 <ActionBar title="app-center" class="action-bar"> </ActionBar>
 <StackLayout class="p-20">
-	<ScrollView class="h-full">
-		<StackLayout>
-			<Button text="Test app-center" (tap)="demoShared.testIt()" class="btn btn-primary"></Button>
-		</StackLayout>
-	</ScrollView>
+  <ScrollView class="h-full">
+    <StackLayout>
+      <Button class="btn btn-primary" (tap)="demoShared.testIt()" text="Test app-center"></Button>
+      <Button class="btn btn-primary" (tap)="demoShared.testTrackEvent()" text="Test Track Event"></Button>
+      <Button class="btn btn-primary" (tap)="demoShared.testCrash()" text="Test Crash"></Button>
+      <Button class="btn btn-primary" (tap)="demoShared.testTrackError()" text="Test Track Error"></Button>
+    </StackLayout>
+  </ScrollView>
 </StackLayout>
