@@ -9,7 +9,7 @@ You will need the App Secret key in order to start the plugin. The App Secret ca
 ## Installation
 
 ```javascript
-ns plugin add @nativescript/app-center
+ns plugin add @skhye05/app-center
 ```
 
 ## Usage
