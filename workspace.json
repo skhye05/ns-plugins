@@ -84,7 +84,8 @@
           ],
           "options": {
             "commands": [
-              "nx run app-center:build.all"
+              "nx run app-center:build.all",
+              "nx run photo-editor:build.all"
             ],
             "parallel": false
           }
@@ -143,6 +144,51 @@
           "options": {
             "commands": [
               "nx g @nativescript/plugin-tools:focus-packages app-center"
+            ],
+            "parallel": false
+          }
+        }
+      }
+    },
+    "photo-editor": {
+      "root": "packages/photo-editor",
+      "projectType": "library",
+      "sourceRoot": "packages/photo-editor",
+      "targets": {
+        "build": {
+          "executor": "@nrwl/node:package",
+          "options": {
+            "outputPath": "dist/packages/photo-editor",
+            "tsConfig": "packages/photo-editor/tsconfig.json",
+            "packageJson": "packages/photo-editor/package.json",
+            "main": "packages/photo-editor/index.d.ts",
+            "assets": [
+              "packages/photo-editor/*.md",
+              "packages/photo-editor/index.d.ts",
+              "LICENSE",
+              {
+                "glob": "**/*",
+                "input": "packages/photo-editor/platforms/",
+                "output": "./platforms/"
+              }
+            ]
+          }
+        },
+        "build.all": {
+          "executor": "@nrwl/workspace:run-commands",
+          "options": {
+            "commands": [
+              "nx run photo-editor:build",
+              "node tools/scripts/build-finish.ts photo-editor"
+            ],
+            "parallel": false
+          }
+        },
+        "focus": {
+          "executor": "@nrwl/workspace:run-commands",
+          "options": {
+            "commands": [
+              "nx g @nativescript/plugin-tools:focus-packages photo-editor"
             ],
             "parallel": false
           }

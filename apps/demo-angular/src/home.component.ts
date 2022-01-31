@@ -8,6 +8,9 @@ export class HomeComponent {
 	demos = [
 	{
 		name: 'app-center'
+	},
+	{
+		name: 'photo-editor'
 	}
 ];
 }

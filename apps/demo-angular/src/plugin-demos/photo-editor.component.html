@@ -1,0 +1,19 @@
+<ActionBar title="photo-editor" class="action-bar"> </ActionBar>
+<StackLayout class="p-20">
+  <ScrollView class="h-full">
+    <StackLayout>
+
+
+      <Image class="p-10" row="0" [src]="demoShared.path" stretch="aspectFit"></Image>
+
+      <Switch checked="false" (tap)="onSwitchClearChanged($event)"></Switch>
+      <Switch checked="false" (tap)="onSwitchCropChanged($event)"></Switch>
+      <Switch checked="false" (tap)="onSwitchDrawChanged($event)"></Switch>
+      <Switch checked="false" (tap)="onSwitchTextChanged($event)"></Switch>
+
+      <Button text="Test photo-editor" (tap)="onEdit()" class="btn btn-primary"></Button>
+
+      <Image id="result-image" class="m-b-5" stretch="aspectFit"></Image>
+    </StackLayout>
+  </ScrollView>
+</StackLayout>

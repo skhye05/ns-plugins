@@ -5,7 +5,8 @@
   "repository": "<fill-your-repository-here>",
   "dependencies": {
     "@nativescript/core": "file:../../node_modules/@nativescript/core",
-    "@skhye05/app-center": "file:../../packages/app-center"
+    "@skhye05/app-center": "file:../../packages/app-center",
+    "@skhye05/photo-editor": "file:../../packages/photo-editor"
   },
   "devDependencies": {
     "@nativescript/android": "~8.1.1",

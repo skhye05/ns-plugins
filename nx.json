@@ -25,6 +25,9 @@
     },
     "app-center": {
       "tags": []
+    },
+    "photo-editor": {
+      "tags": []
     }
   },
   "workspaceLayout": {

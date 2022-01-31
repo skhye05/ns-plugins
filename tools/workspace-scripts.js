@@ -70,6 +70,13 @@ module.exports = {
 					description: '@skhye05/app-center: Build',
 				},
 			},
+			// @skhye05/photo-editor
+			'photo-editor': {
+				build: {
+					script: 'nx run photo-editor:build.all',
+					description: '@skhye05/photo-editor: Build',
+				},
+			},
 			'build-all': {
 				script: 'nx run all:build',
 				description: 'Build all packages',
@@ -83,6 +90,10 @@ module.exports = {
 			'app-center': {
 				script: 'nx run app-center:focus',
 				description: 'Focus on @skhye05/app-center',
+			},
+			'photo-editor': {
+				script: 'nx run photo-editor:focus',
+				description: 'Focus on @skhye05/photo-editor',
 			},
 			reset: {
 				script: 'nx run all:focus',

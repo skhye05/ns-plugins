@@ -1,11 +1,5 @@
-# @skhye05/\* plugins
-
-```
-npm run setup
-npm start
-```
-
 - [@skhye05/app-center](packages/app-center/README.md)
+- [@skhye05/photo-editor](packages/photo-editor/README.md)
 
 # How to use?
 
