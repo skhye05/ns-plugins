@@ -28,6 +28,9 @@
     },
     "photo-editor": {
       "tags": []
+    },
+    "plugin-badge": {
+      "tags": []
     }
   },
   "workspaceLayout": {

@@ -11,6 +11,9 @@ export class HomeComponent {
 	},
 	{
 		name: 'photo-editor'
+	},
+	{
+		name: 'plugin-badge'
 	}
 ];
 }

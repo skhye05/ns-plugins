@@ -77,6 +77,13 @@ module.exports = {
 					description: '@skhye05/photo-editor: Build',
 				},
 			},
+			// @skhye05/plugin-badge
+			'plugin-badge': {
+				build: {
+					script: 'nx run plugin-badge:build.all',
+					description: '@skhye05/plugin-badge: Build',
+				},
+			},
 			'build-all': {
 				script: 'nx run all:build',
 				description: 'Build all packages',
@@ -94,6 +101,10 @@ module.exports = {
 			'photo-editor': {
 				script: 'nx run photo-editor:focus',
 				description: 'Focus on @skhye05/photo-editor',
+			},
+			'plugin-badge': {
+				script: 'nx run plugin-badge:focus',
+				description: 'Focus on @skhye05/plugin-badge',
 			},
 			reset: {
 				script: 'nx run all:focus',

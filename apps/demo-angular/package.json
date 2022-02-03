@@ -3,7 +3,8 @@
   "dependencies": {
     "@nativescript/core": "file:../../node_modules/@nativescript/core",
     "@skhye05/app-center": "file:../../dist/packages/app-center",
-    "@skhye05/photo-editor": "file:../../dist/packages/photo-editor"
+    "@skhye05/photo-editor": "file:../../dist/packages/photo-editor",
+    "@skhye05/plugin-badge": "file:../../dist/packages/plugin-badge"
   },
   "devDependencies": {
     "@nativescript/android": "~8.1.1",

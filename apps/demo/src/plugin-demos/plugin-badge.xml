@@ -1,0 +1,14 @@
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" navigatingTo="navigatingTo" class="page">
+  <Page.actionBar>
+    <ActionBar title="plugin-badge" icon="" class="action-bar">
+    </ActionBar>
+  </Page.actionBar>
+  <StackLayout class="p-20">
+    <ScrollView class="h-full">
+      <StackLayout>
+        <Button text="Set Badge to 5" tap="{{ setBadgeTo5 }}" class="btn btn-primary"/>
+        <Button text="Remove Badge" tap="{{ removeBadge }}" class="btn btn-primary"/>
+      </StackLayout>
+    </ScrollView>
+  </StackLayout>
+</Page>

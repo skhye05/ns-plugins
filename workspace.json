@@ -85,7 +85,8 @@
           "options": {
             "commands": [
               "nx run app-center:build.all",
-              "nx run photo-editor:build.all"
+              "nx run photo-editor:build.all",
+              "nx run plugin-badge:build.all"
             ],
             "parallel": false
           }
@@ -189,6 +190,51 @@
           "options": {
             "commands": [
               "nx g @nativescript/plugin-tools:focus-packages photo-editor"
+            ],
+            "parallel": false
+          }
+        }
+      }
+    },
+    "plugin-badge": {
+      "root": "packages/plugin-badge",
+      "projectType": "library",
+      "sourceRoot": "packages/plugin-badge",
+      "targets": {
+        "build": {
+          "executor": "@nrwl/node:package",
+          "options": {
+            "outputPath": "dist/packages/plugin-badge",
+            "tsConfig": "packages/plugin-badge/tsconfig.json",
+            "packageJson": "packages/plugin-badge/package.json",
+            "main": "packages/plugin-badge/index.d.ts",
+            "assets": [
+              "packages/plugin-badge/*.md",
+              "packages/plugin-badge/index.d.ts",
+              "LICENSE",
+              {
+                "glob": "**/*",
+                "input": "packages/plugin-badge/platforms/",
+                "output": "./platforms/"
+              }
+            ]
+          }
+        },
+        "build.all": {
+          "executor": "@nrwl/workspace:run-commands",
+          "options": {
+            "commands": [
+              "nx run plugin-badge:build",
+              "node tools/scripts/build-finish.ts plugin-badge"
+            ],
+            "parallel": false
+          }
+        },
+        "focus": {
+          "executor": "@nrwl/workspace:run-commands",
+          "options": {
+            "commands": [
+              "nx g @nativescript/plugin-tools:focus-packages plugin-badge"
             ],
             "parallel": false
           }
