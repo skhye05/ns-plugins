@@ -13,29 +13,31 @@
         "assets": [
           "packages/app-dynamics/*.md",
           "packages/app-dynamics/index.d.ts",
-          "packages/app-dynamics/postinstall.js",
-          "packages/app-dynamics/preuninstall.js",
+          "packages/app-dynamics/postinstall-hooks.js",
+          "packages/app-dynamics/preuninstall-hooks.js",
+          "packages/app-dynamics/utils/index.js",
           "LICENSE",
           {
             "glob": "**/*",
             "input": "packages/app-dynamics/platforms/",
             "output": "./platforms/"
           }
+        ],
+        "dependsOn": [
+          {
+            "target": "build.all",
+            "projects": "dependencies"
+          }
         ]
-      },
-      "dependsOn": [
-        {
-          "target": "build.all",
-          "projects": "dependencies"
-        }
-      ]
+      }
     },
     "build.all": {
       "executor": "@nrwl/workspace:run-commands",
       "options": {
-        "commands": ["./node_modules/.bin/tsc -p packages/app-dynamics/hooks/tsconfig.json", "nx run app-dynamics:build", "node tools/scripts/build-finish.ts app-dynamics"],
+        "commands": ["node tools/scripts/build-finish.ts app-dynamics"],
         "parallel": false
       },
+      "outputs": ["dist/packages/app-dynamics"],
       "dependsOn": [
         {
           "target": "build.all",
@@ -45,8 +47,7 @@
           "target": "build",
           "projects": "self"
         }
-      ],
-      "outputs": ["dist/packages/app-dynamics"]
+      ]
     },
     "focus": {
       "executor": "@nrwl/workspace:run-commands",
@@ -61,5 +62,6 @@
         "lintFilePatterns": ["packages/app-dynamics/**/*.ts"]
       }
     }
-  }
+  },
+  "tags": []
 }

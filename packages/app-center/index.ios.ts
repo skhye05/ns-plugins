@@ -52,11 +52,11 @@ export class AppCenter {
     public requestWhenInUseAuthorization(): Promise<any> {
         return new Promise((resolve, reject) => {
             try {
-                const locationManager = CLLocationManager.new();
-                locationManager.delegate = LocationDelegateManagerImplementation as any;
-                locationManager.desiredAccuracy = kCLLocationAccuracyKilometer;
+                // const locationManager = CLLocationManager.new();
+                // locationManager.delegate = LocationDelegateManagerImplementation as any;
+                // locationManager.desiredAccuracy = kCLLocationAccuracyKilometer;
 
-                locationManager.requestWhenInUseAuthorization();
+                // locationManager.requestWhenInUseAuthorization();
 
                 resolve(true);
             } catch (e) {
@@ -404,7 +404,9 @@ export class AppCenter {
         return iso8601DateFormatter.stringFromDate(new Date());
     }
 }
-class AppCenterDelegate extends UIResponder implements UIApplicationDelegate, CLLocationManagerDelegate {
+class AppCenterDelegate extends UIResponder implements UIApplicationDelegate
+// , CLLocationManagerDelegate
+{
     private static option: InitOption;
     public static ObjCProtocols = [UIApplicationDelegate];
 
@@ -476,33 +478,33 @@ class MSACCrashesDelegateImplementation extends NSObject implements MSACCrashesD
 
     }
 }
-class LocationDelegateManagerImplementation extends NSObject implements CLLocationManagerDelegate {
-    private static callbacks: CrashesListener;
-    public static ObjCProtocols = [MSACCrashesDelegate];
+// class LocationDelegateManagerImplementation extends NSObject implements CLLocationManagerDelegate {
+//     private static callbacks: CrashesListener;
+//     public static ObjCProtocols = [MSACCrashesDelegate];
 
-    public locationManagerDidChangeAuthorizationStatus(manager: CLLocationManager, status: CLAuthorizationStatus): void {
-        if (status === CLAuthorizationStatus.kCLAuthorizationStatusAuthorizedWhenInUse) {
-            manager.requestLocation();
-        }
-    }
+//     public locationManagerDidChangeAuthorizationStatus(manager: CLLocationManager, status: CLAuthorizationStatus): void {
+//         if (status === CLAuthorizationStatus.kCLAuthorizationStatusAuthorizedWhenInUse) {
+//             manager.requestLocation();
+//         }
+//     }
 
-    public locationManagerDidUpdateLocations(manager: CLLocationManager, locations: [CLLocation]): void {
-        let userLocation: CLLocation = locations[0] as CLLocation;
+//     public locationManagerDidUpdateLocations(manager: CLLocationManager, locations: [CLLocation]): void {
+//         let userLocation: CLLocation = locations[0] as CLLocation;
 
-        CLGeocoder.new().reverseGeocodeLocationCompletionHandler(userLocation,
-            (placemarks, error) => {
-                if (error === null) {
-                    if (placemarks[0]) {
-                        MSACAppCenter.countryCode = placemarks[0].ISOcountryCode;
-                    }
-                }
-            });
-    }
+//         CLGeocoder.new().reverseGeocodeLocationCompletionHandler(userLocation,
+//             (placemarks, error) => {
+//                 if (error === null) {
+//                     if (placemarks[0]) {
+//                         MSACAppCenter.countryCode = placemarks[0].ISOcountryCode;
+//                     }
+//                 }
+//             });
+//     }
 
-    public locationManagerDidFailWithError(manager: CLLocationManager, error: any): void {
+//     public locationManagerDidFailWithError(manager: CLLocationManager, error: any): void {
 
-    }
-}
+//     }
+// }
 
 function NSDataToString(data: any, encoding?: HttpResponseEncoding): string {
     let code = NSUTF8StringEncoding; // long:4

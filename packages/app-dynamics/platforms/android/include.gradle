@@ -1,18 +1,18 @@
-apply plugin: 'adeum'
+
 
 repositories {
   jcenter()
 }
 
 dependencies {
-     api 'com.appdynamics:appdynamics-runtime:20.7.1'
+     api 'com.appdynamics:appdynamics-runtime:21.+'
 }
 
 adeum{
     // The account information is also needed for on-prem deployments.
     account {
-        name appDynamicsProperties['EUM_ACCOUNT_NAME']
-        licenseKey appDynamicsProperties['EUM_LICENSE_KEY']
+        name '<EUM_ACCOUNT_NAME>'
+        licenseKey '<EUM_LICENSE_KEY>'
     }
     // Add this information if you want to modify upload behavior.
     proguardMappingFileUpload {
@@ -20,5 +20,4 @@ adeum{
         enabled true //enables automatic uploads.  Defaults to true
     }
 }
-
-// def appDynamicsPropertiesFile = rootProject.file("appdynamics.properties")
+apply plugin: 'adeum'

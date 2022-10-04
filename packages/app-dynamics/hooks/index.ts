@@ -1,5 +1,3 @@
-
-
 // import checkForChanges = require('./before-checkForChanges');
 //
 // export {checkForChanges};
@@ -11,3 +9,5 @@ const checkForChanges = require('./before-checkForChanges');
 export { checkForChanges };
 const watchPatterns = require('./before-watchPatterns');
 export { watchPatterns };
+const prepare = require('./before-prepare');
+export { prepare };

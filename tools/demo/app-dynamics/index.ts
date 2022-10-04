@@ -1,9 +1,10 @@
 import { DemoSharedBase } from '../utils';
-import {  } from '@skhye05/app-dynamics';
+import { AppDynamics } from '@skhye05/app-dynamics';
 
-export class DemoSharedAppDynamics extends DemoSharedBase {
+export class DemoSharedAppDynamics {
 
   testIt() {
+    const appDynamics =  AppDynamics.signIn();
     console.log('test app-dynamics!');
   }
 }
