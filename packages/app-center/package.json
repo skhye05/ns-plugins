@@ -1,6 +1,6 @@
 {
   "name": "@skhye05/app-center",
-  "version": "2.0.0",
+  "version": "2.0.3",
   "description": "Microsoft App Center Nativescript Plugin",
   "main": "index",
   "typings": "index.d.ts",

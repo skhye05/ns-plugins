@@ -1,0 +1,65 @@
+{
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "projectType": "library",
+  "sourceRoot": "packages/app-dynamics",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/js:tsc",
+      "options": {
+        "outputPath": "dist/packages/app-dynamics",
+        "tsConfig": "packages/app-dynamics/tsconfig.json",
+        "packageJson": "packages/app-dynamics/package.json",
+        "main": "packages/app-dynamics/index.d.ts",
+        "assets": [
+          "packages/app-dynamics/*.md",
+          "packages/app-dynamics/index.d.ts",
+          "packages/app-dynamics/postinstall.js",
+          "packages/app-dynamics/preuninstall.js",
+          "LICENSE",
+          {
+            "glob": "**/*",
+            "input": "packages/app-dynamics/platforms/",
+            "output": "./platforms/"
+          }
+        ]
+      },
+      "dependsOn": [
+        {
+          "target": "build.all",
+          "projects": "dependencies"
+        }
+      ]
+    },
+    "build.all": {
+      "executor": "@nrwl/workspace:run-commands",
+      "options": {
+        "commands": ["./node_modules/.bin/tsc -p packages/app-dynamics/hooks/tsconfig.json", "nx run app-dynamics:build", "node tools/scripts/build-finish.ts app-dynamics"],
+        "parallel": false
+      },
+      "dependsOn": [
+        {
+          "target": "build.all",
+          "projects": "dependencies"
+        },
+        {
+          "target": "build",
+          "projects": "self"
+        }
+      ],
+      "outputs": ["dist/packages/app-dynamics"]
+    },
+    "focus": {
+      "executor": "@nrwl/workspace:run-commands",
+      "options": {
+        "commands": ["nx g @nativescript/plugin-tools:focus-packages app-dynamics"],
+        "parallel": false
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": ["packages/app-dynamics/**/*.ts"]
+      }
+    }
+  }
+}

@@ -1,4 +1,5 @@
 - [@skhye05/app-center](packages/app-center/README.md)
+- [@skhye05/app-dynamics](packages/app-dynamics/README.md)
 - [@skhye05/photo-editor](packages/photo-editor/README.md)
 - [@skhye05/plugin-badge](packages/plugin-badge/README.md)
 

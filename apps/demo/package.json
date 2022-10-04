@@ -7,10 +7,11 @@
     "@nativescript/core": "file:../../node_modules/@nativescript/core",
     "@skhye05/app-center": "file:../../packages/app-center",
     "@skhye05/photo-editor": "file:../../packages/photo-editor",
-    "@skhye05/plugin-badge": "file:../../packages/plugin-badge"
+    "@skhye05/plugin-badge": "file:../../packages/plugin-badge",
+    "@skhye05/app-dynamics": "file:../../packages/app-dynamics"
   },
   "devDependencies": {
-    "@nativescript/android": "~8.1.1",
-    "@nativescript/ios": "~8.1.0"
+    "@nativescript/android": "~8.3.0",
+    "@nativescript/ios": "~8.3.0"
   }
 }

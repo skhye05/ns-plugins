@@ -9,10 +9,7 @@
     "noEmitHelpers": true,
     "target": "es2017",
     "module": "esnext",
-    "lib": [
-      "es2017",
-      "dom"
-    ],
+    "lib": ["es2017", "dom"],
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
@@ -23,16 +20,12 @@
       }
     ],
     "paths": {
-      "@demo/shared": [
-        "tools/demo/index.ts"
-      ],
-      "@skhye05/*": [
-        "packages/*"
-      ]
+      "@demo/shared": ["tools/demo/index.ts"],
+      "@skhye05/app-center": ["packages/app-center/index.d.ts"],
+      "@skhye05/app-dynamics": ["packages/app-dynamics/index.d.ts"],
+      "@skhye05/photo-editor": ["packages/photo-editor/index.d.ts"],
+      "@skhye05/plugin-badge": ["packages/plugin-badge/index.d.ts"]
     }
   },
-  "exclude": [
-    "node_modules",
-    "tmp"
-  ]
+  "exclude": ["node_modules", "tmp"]
 }

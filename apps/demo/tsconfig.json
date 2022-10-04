@@ -1,21 +1,15 @@
 {
   "extends": "../../tsconfig.base.json",
   "compilerOptions": {
-    "rootDirs": [
-      ".",
-      "../.."
-    ],
+    "rootDirs": [".", "../.."],
     "baseUrl": ".",
     "paths": {
-      "~/*": [
-        "src/*"
-      ],
-      "@demo/shared": [
-        "../../tools/demo/index.ts"
-      ],
-      "@skhye05/*": [
-        "../../packages/*"
-      ]
+      "~/*": ["src/*"],
+      "@demo/shared": ["../../tools/demo/index.ts"],
+      "@skhye05/app-center": ["../../packages/app-center/index.d.ts"],
+      "@skhye05/photo-editor": ["../../packages/photo-editor/index.d.ts"],
+      "@skhye05/plugin-badge": ["../../packages/plugin-badge/index.d.ts"],
+      "@skhye05/app-dynamics": ["../../packages/app-dynamics/index.d.ts"]
     }
   }
 }

@@ -6,9 +6,10 @@
     <ScrollView class="h-full">
       <StackLayout>
         <Button text="add a package first" tap="{{ viewDemo }}" class="btn btn-primary view-demo"/>
-<Button text="app-center" tap="{{ viewDemo }}" class="btn btn-primary view-demo"/>
-<Button text="photo-editor" tap="{{ viewDemo }}" class="btn btn-primary view-demo"/>
-<Button text="plugin-badge" tap="{{ viewDemo }}" class="btn btn-primary view-demo"/>
+        <Button text="app-center" tap="{{ viewDemo }}" class="btn btn-primary view-demo"/>
+        <Button text="photo-editor" tap="{{ viewDemo }}" class="btn btn-primary view-demo"/>
+        <Button text="plugin-badge" tap="{{ viewDemo }}" class="btn btn-primary view-demo"/>
+        <Button text="app-dynamics" tap="{{ viewDemo }}" class="btn btn-primary view-demo"/>
       </StackLayout>
     </ScrollView>
   </StackLayout>

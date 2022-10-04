@@ -1,0 +1,63 @@
+{
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "projectType": "library",
+  "sourceRoot": "packages/photo-editor",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/js:tsc",
+      "options": {
+        "outputPath": "dist/packages/photo-editor",
+        "tsConfig": "packages/photo-editor/tsconfig.json",
+        "packageJson": "packages/photo-editor/package.json",
+        "main": "packages/photo-editor/index.d.ts",
+        "assets": [
+          "packages/photo-editor/*.md",
+          "packages/photo-editor/index.d.ts",
+          "LICENSE",
+          {
+            "glob": "**/*",
+            "input": "packages/photo-editor/platforms/",
+            "output": "./platforms/"
+          }
+        ]
+      },
+      "dependsOn": [
+        {
+          "target": "build.all",
+          "projects": "dependencies"
+        }
+      ]
+    },
+    "build.all": {
+      "executor": "@nrwl/workspace:run-commands",
+      "options": {
+        "commands": ["node tools/scripts/build-finish.ts photo-editor"],
+        "parallel": false
+      },
+      "outputs": ["dist/packages/photo-editor"],
+      "dependsOn": [
+        {
+          "target": "build.all",
+          "projects": "dependencies"
+        },
+        {
+          "target": "build",
+          "projects": "self"
+        }
+      ]
+    },
+    "focus": {
+      "executor": "@nrwl/workspace:run-commands",
+      "options": {
+        "commands": ["nx g @nativescript/plugin-tools:focus-packages photo-editor"],
+        "parallel": false
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": ["packages/photo-editor/**/*.ts"]
+      }
+    }
+  }
+}

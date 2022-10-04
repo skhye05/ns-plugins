@@ -10,6 +10,9 @@ export class HomeComponent {
 		name: 'app-center'
 	},
 	{
+		name: 'app-dynamics'
+	},
+	{
 		name: 'photo-editor'
 	},
 	{

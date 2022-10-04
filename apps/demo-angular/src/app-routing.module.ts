@@ -8,6 +8,7 @@ const routes: Routes = [
    { path: '', redirectTo: '/home', pathMatch: 'full' },
    { path: 'home', component: HomeComponent },
 	{ path: 'app-center', loadChildren: () => import('./plugin-demos/app-center.module').then(m => m.AppCenterModule) },
+	{ path: 'app-dynamics', loadChildren: () => import('./plugin-demos/app-dynamics.module').then(m => m.AppDynamicsModule) },
 	{ path: 'photo-editor', loadChildren: () => import('./plugin-demos/photo-editor.module').then(m => m.PhotoEditorModule) },
 	{ path: 'plugin-badge', loadChildren: () => import('./plugin-demos/plugin-badge.module').then(m => m.PluginBadgeModule) }
 ];
